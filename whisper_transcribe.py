@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """
-Basic Whisper transcription example.
-This script demonstrates how to use OpenAI's Whisper for audio transcription.
+File-based Meeting Note Taker - Transcribe pre-recorded audio files.
+
+Perfect for converting recorded meetings, interviews, lectures, or audio files
+into organized meeting notes. Supports all common audio formats and automatically
+saves transcripts with timestamps and metadata.
 """
 
 import whisper

@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """
-Live audio transcription using Whisper with Voice Activity Detection (VAD).
-This script uses WebRTC VAD to detect speech and only transcribe when voice is detected.
+Smart Meeting Note Taker - Live transcription with Voice Activity Detection.
+
+Intelligent meeting transcription that only processes speech segments using WebRTC VAD.
+Perfect for meetings with natural pauses and conversation flow, providing accurate
+note-taking with optimal efficiency.
 """
 
 import pyaudio

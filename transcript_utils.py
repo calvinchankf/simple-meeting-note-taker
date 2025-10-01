@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """
-Transcript utility functions for Whisper applications.
-Provides shared functionality for saving and managing transcripts across all Whisper tools.
+Meeting Note Transcript Utilities - Shared functionality for note-taking tools.
+
+Provides consistent transcript logging, file organization, and metadata management
+across all meeting note-taking tools. Handles automatic file naming, rich metadata,
+and organized storage of meeting transcriptions.
 """
 
 import os

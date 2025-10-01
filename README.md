@@ -1,8 +1,28 @@
-# Whisper Starter Project
+# Simple Meeting Note Taker
 
-A simple starter project to experiment with OpenAI's Whisper speech-to-text model.
+A simple meeting note-taking command line tool powered by OpenAI's Whisper speech-to-text models
 
-## Setup
+## Features
+
+🎤 **Multiple Transcription Modes:**
+- **File-based transcription** for pre-recorded audio
+- **Live transcription** with chunked processing
+- **Smart VAD transcription** using voice activity detection
+- **High-performance transcription** with faster-whisper (up to 4x faster)
+
+📝 **Automatic Note Generation:**
+- Auto-saves all transcriptions to organized files
+- Timestamped filenames for easy organization
+- Rich metadata including language detection and confidence scores
+- Both detailed and continuous transcript formats
+
+⚡ **Optimized Performance:**
+- Multiple AI backends (OpenAI Whisper, Faster-Whisper)
+- GPU and CPU support with automatic fallback
+- Configurable precision (int8, float16, float32)
+- Real-time performance monitoring
+
+## Quick Start
 
 1. **Activate the virtual environment:**
    ```bash
@@ -11,42 +31,27 @@ A simple starter project to experiment with OpenAI's Whisper speech-to-text mode
 
 2. **Verify installation:**
    ```bash
-   python -c "import whisper; print('Whisper installed successfully!')"
+   python -c "import whisper; print('Meeting Note Taker ready!')"
    ```
 
 ## Usage
 
-### Method 1: Command Line Transcription
+### Method 1: Transcribe Audio Files
 
 ```bash
 python whisper_transcribe.py <audio_file> [model_name]
 ```
 
-**Examples:**
+Perfect for transcribing recorded meetings, interviews, or lectures:
 ```bash
-# Using default 'base' model
-python whisper_transcribe.py audio_samples/sample.wav
+# Transcribe a meeting recording
+python whisper_transcribe.py recordings/team_meeting.wav base
 
-# Using different models
-python whisper_transcribe.py audio_samples/sample.wav tiny    # Fastest, least accurate
-python whisper_transcribe.py audio_samples/sample.wav base    # Good balance
-python whisper_transcribe.py audio_samples/sample.wav small   # Better accuracy
-python whisper_transcribe.py audio_samples/sample.wav medium  # Even better accuracy
-python whisper_transcribe.py audio_samples/sample.wav large   # Best accuracy, slowest
+# High-quality transcription for important content
+python whisper_transcribe.py recordings/interview.mp3 large
 ```
 
-### Method 2: Interactive Demo
-
-```bash
-python whisper_demo.py
-```
-
-This will start an interactive session where you can:
-- Choose which model to use
-- Select from available audio files
-- See transcription results with timestamps
-
-### Method 3: Live Audio Transcription
+### Method 2: Live Meeting Transcription
 
 #### Basic Live Transcription (Chunked)
 ```bash
@@ -77,27 +82,24 @@ Smart transcription using Voice Activity Detection:
 - Optimized for natural conversation patterns
 - Reduces unnecessary processing during silence
 
-#### High-Performance Live Transcription (Faster-Whisper) - Recommended
+#### High-Performance Live Meeting Transcription - **Recommended**
 ```bash
 python whisper_live_faster.py
 ```
 
-Ultra-fast transcription using faster-whisper (CTranslate2):
-- **Up to 4x faster** than OpenAI Whisper
-- **Lower memory usage** with optimized models
-- **Configurable precision** (int8, float16, float32)
-- **GPU and CPU support** with automatic fallback
-- **Built-in VAD filtering** for optimal performance
-- **Real-time performance metrics** tracking
-- **Automatic transcript saving** to organized files
+**Perfect for real-time meeting note-taking:**
+- **Up to 4x faster** than standard Whisper
+- **Smart voice detection** - only transcribes when people speak
+- **Automatic meeting notes** saved with timestamps
+- **Multi-language support** with confidence scoring
+- **Performance monitoring** for optimal settings
 
-**Faster-Whisper Features:**
-- CTranslate2 backend for maximum speed
-- Multiple compute types for speed/quality balance
-- Advanced model optimization (quantization)
-- Performance statistics and monitoring
-- Compatible with all Whisper model sizes
-- **Auto-saves transcripts** to `transcripts/transcript_YYYYMMDD_HHMMSS.txt`
+**Meeting-Focused Features:**
+- Real-time transcription as participants speak
+- Automatic pause detection for natural conversation flow
+- Rich meeting metadata (duration, participants, language)
+- Continuous and segmented transcript formats
+- **Auto-saves meeting notes** to `transcripts/transcript_YYYYMMDD_HHMMSS.txt`
 
 ## Supported Audio Formats
 
@@ -123,16 +125,9 @@ Whisper supports many audio formats including:
 
 Place your audio files in the `audio_samples/` directory to test transcription.
 
-## Generated Transcripts
+## Meeting Notes & Transcripts
 
-When using the faster-whisper live transcription (`whisper_live_faster.py`):
-- Transcripts are **automatically saved** when you stop recording (Ctrl+C)
-- Files are saved to `transcripts/transcript_YYYYMMDD_HHMMSS.txt`
-- Each file contains:
-  - Session metadata (start/end time, model settings, performance stats)
-  - Detailed transcript with timestamps and confidence scores
-  - Clean continuous transcript for easy reading
-- The `transcripts/` folder is created automatically if it doesn't exist
+All transcription tools automatically generate organized meeting notes and store in `transcripts/transcript_YYYYMMDD_HHMMSS.txt`
 
 ## Deactivating the Environment
 

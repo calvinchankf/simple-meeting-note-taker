@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """
-Live audio transcription using faster-whisper for optimized real-time performance.
-This script uses faster-whisper (CTranslate2) for up to 4x faster transcription speed.
+High-Performance Meeting Note Taker - Real-time transcription with faster-whisper.
+
+Perfect for live meeting transcription with optimized performance using CTranslate2.
+Features automatic note-taking, voice activity detection, and up to 4x faster speed
+than standard Whisper models.
 """
 
 import pyaudio

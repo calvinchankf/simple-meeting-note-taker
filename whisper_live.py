@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """
-Live audio transcription using Whisper with chunked audio capture.
-This script captures audio from the microphone in real-time and transcribes it.
+Basic Meeting Note Taker - Live transcription with chunked audio processing.
+
+Simple real-time meeting transcription using fixed-time audio chunks. Good for
+getting started with live note-taking, though VAD-based or faster-whisper options
+provide better performance for most meeting scenarios.
 """
 
 import pyaudio
