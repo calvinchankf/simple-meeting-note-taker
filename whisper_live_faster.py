@@ -16,6 +16,7 @@ import queue
 import numpy as np
 from datetime import datetime
 import collections
+from transcript_utils import TranscriptLogger
 
 class FasterWhisperLiveTranscriber:
     def __init__(self, model_name="base", device="cpu", compute_type="int8", vad_mode=2):
@@ -56,6 +57,9 @@ class FasterWhisperLiveTranscriber:
         # Performance tracking
         self.transcription_times = []
         self.total_segments = 0
+        
+        # Transcript logging using utility
+        self.transcript_logger = TranscriptLogger(tool_name="faster-whisper", model_name=model_name)
         
         # Threading
         self.audio_queue = queue.Queue()
@@ -215,6 +219,15 @@ class FasterWhisperLiveTranscriber:
                     print(f"[{timestamp}] 📝 \"{text}\"")
                     print(f"[{timestamp}] 🌍 Language: {info.language} (confidence: {info.language_probability:.2f})")
                     print(f"[{timestamp}] ⚡ Speed: {transcription_duration:.2f}s | Avg: {avg_time:.2f}s | Total segments: {self.total_segments}")
+                    
+                    # Add to transcript log using utility
+                    self.transcript_logger.add_transcript(
+                        text=text,
+                        timestamp=timestamp,
+                        language=info.language,
+                        confidence=info.language_probability,
+                        duration=transcription_duration
+                    )
                 else:
                     print(f"[{timestamp}] ❓ No clear speech detected")
                 
@@ -235,6 +248,13 @@ class FasterWhisperLiveTranscriber:
         """Start faster-whisper live transcription."""
         if not self.model:
             self.load_model()
+        
+        # Start transcript session
+        self.transcript_logger.start_session(
+            device=self.device,
+            compute_type=self.compute_type,
+            vad_mode=self.vad_mode
+        )
         
         self.is_recording = True
         
@@ -278,6 +298,10 @@ class FasterWhisperLiveTranscriber:
             print(f"   Average transcription time: {avg_time:.2f}s")
             print(f"   Fastest transcription: {min_time:.2f}s")
             print(f"   Slowest transcription: {max_time:.2f}s")
+        
+        # Save transcript using utility
+        self.transcript_logger.session_metadata['transcription_times'] = self.transcription_times
+        self.transcript_logger.save_transcript()
         
         print("✅ Faster-Whisper transcription stopped.")
     

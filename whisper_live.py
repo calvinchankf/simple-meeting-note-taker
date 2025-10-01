@@ -13,6 +13,7 @@ import tempfile
 import os
 import queue
 from datetime import datetime
+from transcript_utils import TranscriptLogger
 
 class LiveTranscriber:
     def __init__(self, model_name="base", chunk_duration=3):
@@ -41,6 +42,9 @@ class LiveTranscriber:
         
         # PyAudio instance
         self.p = pyaudio.PyAudio()
+        
+        # Transcript logging
+        self.transcript_logger = TranscriptLogger(tool_name="basic-whisper", model_name=model_name)
         
     def load_model(self):
         """Load the Whisper model."""
@@ -120,6 +124,13 @@ class LiveTranscriber:
                 
                 if text:
                     print(f"[{timestamp}] 📝 {text}")
+                    
+                    # Add to transcript log
+                    self.transcript_logger.add_transcript(
+                        text=text,
+                        timestamp=timestamp,
+                        language=result['language']
+                    )
                 else:
                     print(f"[{timestamp}] 🔇 (No speech detected)")
                 
@@ -138,6 +149,9 @@ class LiveTranscriber:
         """Start live transcription."""
         if not self.model:
             self.load_model()
+        
+        # Start transcript session
+        self.transcript_logger.start_session(chunk_duration=self.chunk_duration)
         
         self.is_recording = True
         
@@ -165,6 +179,9 @@ class LiveTranscriber:
             self.recording_thread.join()
         if self.transcription_thread:
             self.transcription_thread.join()
+        
+        # Save transcript
+        self.transcript_logger.save_transcript()
         
         print("✅ Transcription stopped.")
     

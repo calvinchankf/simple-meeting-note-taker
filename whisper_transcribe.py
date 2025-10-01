@@ -7,6 +7,7 @@ This script demonstrates how to use OpenAI's Whisper for audio transcription.
 import whisper
 import sys
 import os
+from transcript_utils import save_simple_transcript
 
 def transcribe_audio(audio_file_path, model_name="base"):
     """
@@ -57,6 +58,17 @@ def main():
             end_time = segment['end']
             text = segment['text'].strip()
             print(f"[{start_time:.2f}s - {end_time:.2f}s] {text}")
+            
+        # Save transcript to file
+        transcript_text = result['text'].strip()
+        if transcript_text:
+            saved_file = save_simple_transcript(
+                text=transcript_text,
+                tool_name="command-line-whisper", 
+                model_name=model_name
+            )
+            if saved_file:
+                print(f"\n📝 Transcript saved to: {saved_file}")
             
     except Exception as e:
         print(f"Error: {e}")

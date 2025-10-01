@@ -1,0 +1,233 @@
+======================================================================
+FASTER-WHISPER TRANSCRIPTION SESSION
+======================================================================
+Session started: 2025-10-01 01:45:16
+Session ended: 2025-10-01 01:46:57
+Tool: faster-whisper
+Model: base
+Device: cpu
+Compute Type: int8
+Vad Mode: 3
+Transcription Times: [0.8122169971466064, 0.6575808525085449, 0.6581077575683594, 0.6545162200927734, 0.6608591079711914, 0.704495906829834, 1.2407350540161133, 0.6762180328369141, 0.6981821060180664, 0.6683971881866455, 0.66324782371521, 0.8662140369415283, 0.7377309799194336, 0.6816227436065674, 0.7322077751159668, 1.2991418838500977, 0.6687889099121094, 0.6807827949523926, 0.668720006942749, 0.7063491344451904, 0.6714389324188232, 1.2722110748291016, 0.688270092010498, 0.6907966136932373, 0.6993858814239502, 0.6780569553375244, 0.7143030166625977, 0.7021839618682861, 0.682884693145752, 0.7356641292572021]
+Total segments: 30
+Average transcription time: 0.76s
+
+======================================================================
+DETAILED TRANSCRIPT
+======================================================================
+
+[01:45:29] Segment 1
+Text: The British Army is one of the strongest and most powerful elite fighting forces on the planet. And their soldiers' conditioning review decides if he's...
+Language: en
+Confidence: 0.99
+Processing time: 0.81s
+--------------------------------------------------
+
+[01:45:30] Segment 2
+Text: wrong enough to stay in.
+Language: en
+Confidence: 0.91
+Processing time: 0.66s
+--------------------------------------------------
+
+[01:45:32] Segment 3
+Text: so we can get kicked out.
+Language: en
+Confidence: 0.95
+Processing time: 0.66s
+--------------------------------------------------
+
+[01:45:33] Segment 4
+Text: but this time there's a twist.
+Language: en
+Confidence: 0.99
+Processing time: 0.65s
+--------------------------------------------------
+
+[01:45:35] Segment 5
+Text: not just trying to pass.
+Language: en
+Confidence: 0.80
+Processing time: 0.66s
+--------------------------------------------------
+
+[01:45:39] Segment 6
+Text: I'm going up against professional bodybuilder and fitness freak Matt does fitness.
+Language: en
+Confidence: 0.97
+Processing time: 0.70s
+--------------------------------------------------
+
+[01:45:41] Segment 7
+Text: pain strength.
+Language: en
+Confidence: 0.79
+Processing time: 1.24s
+--------------------------------------------------
+
+[01:45:43] Segment 8
+Text: huge biceps and raw power.
+Language: en
+Confidence: 0.98
+Processing time: 0.68s
+--------------------------------------------------
+
+[01:45:48] Segment 9
+Text: me a pro climber and I guess an all-around fit guy.
+Language: en
+Confidence: 0.97
+Processing time: 0.70s
+--------------------------------------------------
+
+[01:45:50] Segment 10
+Text: This is strength against endurance.
+Language: en
+Confidence: 0.99
+Processing time: 0.67s
+--------------------------------------------------
+
+[01:45:52] Segment 11
+Text: power against agility.
+Language: en
+Confidence: 0.98
+Processing time: 0.66s
+--------------------------------------------------
+
+[01:45:55] Segment 12
+Text: So who comes out on top? And can we even pass this test?
+Language: en
+Confidence: 0.98
+Processing time: 0.87s
+--------------------------------------------------
+
+[01:46:01] Segment 13
+Text: about the sponsor of this video, NordVPN. So I don't only use NordVPN one of them.
+Language: en
+Confidence: 0.98
+Processing time: 0.74s
+--------------------------------------------------
+
+[01:46:04] Segment 14
+Text: when I'm at home all the time.
+Language: en
+Confidence: 0.96
+Processing time: 0.68s
+--------------------------------------------------
+
+[01:46:09] Segment 15
+Text: that I like to watch is blocked in our way but with Norby Pian I just changed my virtual location.
+Language: en
+Confidence: 0.96
+Processing time: 0.73s
+--------------------------------------------------
+
+[01:46:11] Segment 16
+Text: totally edges.
+Language: en
+Confidence: 0.93
+Processing time: 1.30s
+--------------------------------------------------
+
+[01:46:13] Segment 17
+Text: What I really like is...
+Language: en
+Confidence: 0.97
+Processing time: 0.67s
+--------------------------------------------------
+
+[01:46:16] Segment 18
+Text: nor VPNs, strap protection pro can even...
+Language: en
+Confidence: 0.76
+Processing time: 0.68s
+--------------------------------------------------
+
+[01:46:18] Segment 19
+Text: I hope, or me, win number 12 clicks.
+Language: en
+Confidence: 0.93
+Processing time: 0.67s
+--------------------------------------------------
+
+[01:46:22] Segment 20
+Text: games are just getting better and better and this really helps me.
+Language: en
+Confidence: 0.98
+Processing time: 0.71s
+--------------------------------------------------
+
+[01:46:24] Segment 21
+Text: And of course it keeps...
+Language: en
+Confidence: 0.89
+Processing time: 0.67s
+--------------------------------------------------
+
+[01:46:25] Segment 22
+Text: internet.
+Language: en
+Confidence: 0.76
+Processing time: 1.27s
+--------------------------------------------------
+
+[01:46:28] Segment 23
+Text: it, it also blocks trackers and ads.
+Language: en
+Confidence: 0.97
+Processing time: 0.69s
+--------------------------------------------------
+
+[01:46:30] Segment 24
+Text: and you can connect to up to 10 different...
+Language: en
+Confidence: 0.96
+Processing time: 0.69s
+--------------------------------------------------
+
+[01:46:34] Segment 25
+Text: and it's also the fastest VPN I've ever used.
+Language: en
+Confidence: 0.95
+Processing time: 0.70s
+--------------------------------------------------
+
+[01:46:38] Segment 26
+Text: even gaming, there is zero lag.
+Language: en
+Confidence: 0.97
+Processing time: 0.68s
+--------------------------------------------------
+
+[01:46:45] Segment 27
+Text: Magnet for a very exclusive deal. There is 30-day money back in teeps.
+Language: en
+Confidence: 0.98
+Processing time: 0.71s
+--------------------------------------------------
+
+[01:46:46] Segment 28
+Text: no risk in trying it.
+Language: en
+Confidence: 0.97
+Processing time: 0.70s
+--------------------------------------------------
+
+[01:46:48] Segment 29
+Text: And now let's get back to the video.
+Language: en
+Confidence: 0.98
+Processing time: 0.68s
+--------------------------------------------------
+
+[01:46:56] Segment 30
+Text: So what happens if you can't do this?
+Language: en
+Confidence: 0.98
+Processing time: 0.74s
+--------------------------------------------------
+
+======================================================================
+CONTINUOUS TRANSCRIPT
+======================================================================
+
+The British Army is one of the strongest and most powerful elite fighting forces on the planet. And their soldiers' conditioning review decides if he's... wrong enough to stay in. so we can get kicked out. but this time there's a twist. not just trying to pass. I'm going up against professional bodybuilder and fitness freak Matt does fitness. pain strength. huge biceps and raw power. me a pro climber and I guess an all-around fit guy. This is strength against endurance. power against agility. So who comes out on top? And can we even pass this test? about the sponsor of this video, NordVPN. So I don't only use NordVPN one of them. when I'm at home all the time. that I like to watch is blocked in our way but with Norby Pian I just changed my virtual location. totally edges. What I really like is... nor VPNs, strap protection pro can even... I hope, or me, win number 12 clicks. games are just getting better and better and this really helps me. And of course it keeps... internet. it, it also blocks trackers and ads. and you can connect to up to 10 different... and it's also the fastest VPN I've ever used. even gaming, there is zero lag. Magnet for a very exclusive deal. There is 30-day money back in teeps. no risk in trying it. And now let's get back to the video. So what happens if you can't do this?

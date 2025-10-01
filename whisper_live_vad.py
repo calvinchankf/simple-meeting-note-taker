@@ -16,6 +16,7 @@ import queue
 import numpy as np
 from datetime import datetime
 import collections
+from transcript_utils import TranscriptLogger
 
 class VADLiveTranscriber:
     def __init__(self, model_name="base", vad_mode=3):
@@ -56,6 +57,9 @@ class VADLiveTranscriber:
         
         # PyAudio instance
         self.p = pyaudio.PyAudio()
+        
+        # Transcript logging
+        self.transcript_logger = TranscriptLogger(tool_name="vad-whisper", model_name=model_name)
         
     def load_model(self):
         """Load the Whisper model."""
@@ -179,6 +183,13 @@ class VADLiveTranscriber:
                 if text:
                     print(f"[{timestamp}] 📝 \"{text}\"")
                     print(f"[{timestamp}] 🌍 Language: {result['language']}")
+                    
+                    # Add to transcript log
+                    self.transcript_logger.add_transcript(
+                        text=text,
+                        timestamp=timestamp,
+                        language=result['language']
+                    )
                 else:
                     print(f"[{timestamp}] ❓ No clear speech detected in segment")
                 
@@ -199,6 +210,9 @@ class VADLiveTranscriber:
         """Start VAD-based live transcription."""
         if not self.model:
             self.load_model()
+        
+        # Start transcript session
+        self.transcript_logger.start_session(vad_mode=self.vad_mode)
         
         self.is_recording = True
         
@@ -232,6 +246,9 @@ class VADLiveTranscriber:
             self.recording_thread.join()
         if self.transcription_thread:
             self.transcription_thread.join()
+        
+        # Save transcript
+        self.transcript_logger.save_transcript()
         
         print("✅ VAD transcription stopped.")
     

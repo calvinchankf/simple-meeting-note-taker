@@ -89,6 +89,7 @@ Ultra-fast transcription using faster-whisper (CTranslate2):
 - **GPU and CPU support** with automatic fallback
 - **Built-in VAD filtering** for optimal performance
 - **Real-time performance metrics** tracking
+- **Automatic transcript saving** to organized files
 
 **Faster-Whisper Features:**
 - CTranslate2 backend for maximum speed
@@ -96,6 +97,7 @@ Ultra-fast transcription using faster-whisper (CTranslate2):
 - Advanced model optimization (quantization)
 - Performance statistics and monitoring
 - Compatible with all Whisper model sizes
+- **Auto-saves transcripts** to `transcripts/transcript_YYYYMMDD_HHMMSS.txt`
 
 ## Supported Audio Formats
 
@@ -120,6 +122,17 @@ Whisper supports many audio formats including:
 ## Adding Audio Files
 
 Place your audio files in the `audio_samples/` directory to test transcription.
+
+## Generated Transcripts
+
+When using the faster-whisper live transcription (`whisper_live_faster.py`):
+- Transcripts are **automatically saved** when you stop recording (Ctrl+C)
+- Files are saved to `transcripts/transcript_YYYYMMDD_HHMMSS.txt`
+- Each file contains:
+  - Session metadata (start/end time, model settings, performance stats)
+  - Detailed transcript with timestamps and confidence scores
+  - Clean continuous transcript for easy reading
+- The `transcripts/` folder is created automatically if it doesn't exist
 
 ## Deactivating the Environment
 

@@ -6,6 +6,7 @@ This script provides a simple interactive way to test Whisper transcription.
 
 import whisper
 import os
+from transcript_utils import save_simple_transcript
 
 def list_audio_files(directory="audio_samples"):
     """List available audio files in the specified directory."""
@@ -66,6 +67,17 @@ def demo():
             print(f"File: {selected_file}")
             print(f"Language: {result['language']}")
             print(f"Text: {result['text']}")
+            
+            # Save transcript to file
+            transcript_text = result['text'].strip()
+            if transcript_text:
+                saved_file = save_simple_transcript(
+                    text=transcript_text,
+                    tool_name="interactive-demo", 
+                    model_name=model_choice
+                )
+                if saved_file:
+                    print(f"\n📝 Transcript saved to: {saved_file}")
             
         else:
             print("Invalid file selection.")
